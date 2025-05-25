@@ -1,9 +1,11 @@
-﻿
+﻿// DesignPatternsDemo.cs
+
 using System;
 using System.Collections.Generic;
 
 namespace DesignPatternsDemo
 {
+    // 1. Singleton: ResourceManager
 
     public class ResourceManager
     {
@@ -32,6 +34,8 @@ namespace DesignPatternsDemo
         public void StoreData(string key, object value) => _data[key] = value;
         public object GetData(string key) => _data.ContainsKey(key) ? _data[key] : null;
     }
+
+    // 2. Adapter: Currency Adapter
 
     public interface ICurrencyRateProvider
     {
@@ -67,6 +71,7 @@ namespace DesignPatternsDemo
         }
     }
 
+    // 3. Observer: Order Status
     public interface IOrderStatusObserver
     {
         void OnStatusChanged(string orderId, string newStatus);
@@ -99,6 +104,7 @@ namespace DesignPatternsDemo
         }
     }
 
+    // Main Program
     class Program
     {
         static void Main(string[] args)
